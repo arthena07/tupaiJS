@@ -29,8 +29,7 @@ tupai js/
 1. Buka file explorer
 2. Navigasi ke folder `D:\Hana\Tugas Kuliah JavaScript\tupai js`
 3. Klik dua kali pada file `index.html`
-4. Halaman akan terbuka di browser default Anda
-5. Klik tombol "Jalankan Testing Tupai" untuk melihat hasilnya
+4. Klik tombol "Jalankan Testing Tupai" untuk melihat hasilnya
 
 ### Opsi 2: Menggunakan Live Server (VS Code)
 
@@ -100,4 +99,4 @@ Ini adalah proyek tugas kuliah, namun jika ingin melakukan perbaikan:
 
 ## Lisensi
 
-Proyek ini dibuat untuk tujuan pendidikan.
+Proyek ini dibuat untuk tujuan tugas kuliah an Mazaya Hana Naura | Informatika | ITTS
