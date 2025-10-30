@@ -69,14 +69,7 @@ Jika Anda memiliki GitHub CLI terinstall:
    ```bash
    cd "D:\Hana\Tugas Kuliah JavaScript\tupai js"
    gh repo create arthena07/tupaiJS --public --push
-   ```
-
-## Status Saat Ini
-
-✅ Repository Git telah diinisialisasi  
-✅ Semua file telah di-commit  
-✅ Remote origin telah ditambahkan  
-❌ Push ke GitHub gagal (permission error)  
+   ```  
 
 ## File yang Telah Dibuat
 
@@ -91,4 +84,5 @@ Jika Anda memiliki GitHub CLI terinstall:
 1. Buka file `index.html` di browser
 2. Klik tombol "Jalankan Testing Tupai"
 3. Lihat hasilnya di halaman tersebut
+
 
