@@ -1,15 +1,6 @@
 # Instruksi Push ke GitHub
 
-Proyek telah siap untuk di-push ke repository GitHub. Namun, terjadi error permission saat mencoba push. Berikut adalah langkah-langkah untuk menyelesaikannya:
-
-## Masalah yang Terjadi
-```
-ERROR: Permission to arthena07/tupaiJS.git denied to sunendi.
-fatal: Could not read from remote repository.
-```
-
-## Solusi
-
+# dari laptop ayah
 ### Opsi 1: Menggunakan HTTPS (Direkomendasikan)
 
 1. Hapus remote origin yang ada:
@@ -95,10 +86,9 @@ Jika Anda memiliki GitHub CLI terinstall:
 4. **README.md** - Dokumentasi lengkap proyek
 5. **GITHUB_INSTRUCTIONS.md** - File ini (instruksi GitHub)
 
-## Cara Menjalankan Proyek
+## NOTE Cara Menjalankan Proyek
 
 1. Buka file `index.html` di browser
 2. Klik tombol "Jalankan Testing Tupai"
 3. Lihat hasilnya di halaman tersebut
 
-Proyek sudah siap digunakan dan dapat dijalankan di localhost tanpa perlu push ke GitHub terlebih dahulu.
