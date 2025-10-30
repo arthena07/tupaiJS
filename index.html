@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tupai JavaScript Project</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .tupai-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tupai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tupai-card h3 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        
+        .aksi {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .aksi p {
+            margin: 5px 0;
+            font-style: italic;
+        }
+        
+        .console-output {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 30px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐿️ Tupai JavaScript Project</h1>
+        
+        <div class="controls">
+            <button onclick="jalankanTesting()">Jalankan Testing Tupai</button>
+            <button onclick="bersihkanOutput()">Bersihkan Output</button>
+        </div>
+        
+        <div id="hasil">
+            <p>Klik tombol "Jalankan Testing Tupai" untuk melihat hasilnya.</p>
+        </div>
+        
+        <div id="console-output" class="console-output" style="display: none;">
+            <strong>Console Output:</strong>
+            <div id="console-content"></div>
+        </div>
+        
+        <div class="footer">
+            <p>Tugas Kuliah JavaScript - Tupai Project</p>
+            <p>GitHub: <a href="https://github.com/arthena07/tupaiJS.git">git@github.com:arthena07/tupaiJS.git</a></p>
+        </div>
+    </div>
+
+    <!-- Memuat file JavaScript -->
+    <script src="Tupai.js"></script>
+    <script src="TestTupai.js"></script>
+    
+    <script>
+        // Override console.log untuk menampilkan di HTML
+        const originalLog = console.log;
+        const consoleContent = document.getElementById('console-content');
+        let consoleOutput = '';
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            consoleOutput += args.join(' ') + '\n';
+            consoleContent.textContent = consoleOutput;
+        };
+        
+        function jalankanTesting() {
+            // Reset console output
+            consoleOutput = '';
+            consoleContent.textContent = '';
+            
+            // Menampilkan console output
+            document.getElementById('console-output').style.display = 'block';
+            
+            // Membuat instance TestTupai dan menjalankan testing
+            const testTupai = new TestTupai();
+            const tupais = testTupai.ujiTupai();
+            
+            // Menampilkan hasil di HTML
+            document.getElementById('hasil').innerHTML = testTupai.tampilkanDiHTML();
+        }
+        
+        function bersihkanOutput() {
+            document.getElementById('hasil').innerHTML = '<p>Klik tombol "Jalankan Testing Tupai" untuk melihat hasilnya.</p>';
+            document.getElementById('console-output').style.display = 'none';
+            consoleOutput = '';
+            consoleContent.textContent = '';
+        }
+        
+        // Menjalankan testing otomatis saat halaman dimuat
+        window.onload = function() {
+            console.log("Halaman telah dimuat. Siap untuk menjalankan testing tupai.");
+        };
+    </script>
+</body>
+</html>

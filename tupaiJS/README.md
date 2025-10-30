@@ -1,0 +1,2 @@
+# tupaiJS
+tugas class tupai
